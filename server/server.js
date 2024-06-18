@@ -2,8 +2,8 @@ const express = require('express');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-app.use(express.static('../client/dist'));
+const filepath = "/Users/dylanslyter/Desktop/19-DS-PWA's/client/dist";
+app.use(express.static(filepath));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

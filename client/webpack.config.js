@@ -16,7 +16,7 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'src', 'index.html'),
+        template: path.resolve(__dirname, 'index.html'),
         filename: 'index.html',
       }),
       new InjectManifest({
@@ -31,6 +31,13 @@ module.exports = () => {
         theme_color: '#317EFB',
         start_url: '/',
         publicPath: '/',
+        icons: [
+          {
+            src: path.resolve(__dirname, 'src', 'images', 'logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('icons'),
+          },
+        ],
       }),
     ],
     module: {
