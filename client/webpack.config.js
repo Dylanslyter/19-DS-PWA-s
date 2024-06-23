@@ -20,7 +20,7 @@ module.exports = () => {
         filename: 'index.html',
       }),
       new InjectManifest({
-        swSrc: './src-sw.js',
+        swSrc: path.resolve(__dirname, 'src-sw.js'), // Correct path resolution
         swDest: 'service-worker.js',  
       }),
       new WebpackPwaManifest({
@@ -60,5 +60,6 @@ module.exports = () => {
     },
   };
 };
+
 
 
